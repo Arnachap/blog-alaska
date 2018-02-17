@@ -8,7 +8,7 @@
     <meta name="description" content="Billet Simple pour l'Alaska, un roman de Jean Forteroche">
     <meta name="author" content="Jean Forteroche">
 
-    <title>Billet Simple pour l'Alaska - Un roman de Jean Forteroche</title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -21,7 +21,8 @@
         rel='stylesheet' type='text/css'>
 
     <!-- Custom styles -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -52,68 +53,7 @@
     </nav>
 
 
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/contact-bg.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="page-heading">
-                        <h1>Contactez-moi</h1>
-                        <span class="subheading">Vous avez des questions? J'ai des réponses.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <p>&emsp;Vous voulez entrer en contact avec moi? Remplissez le formulaire ci-deesous pour m'envoyer un message, et
-                    j'y répondrai dès que possible.</p>
-                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-                <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-                <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>name</label>
-                            <input type="text" class="form-control" placeholder="Nom" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>email</label>
-                            <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>phone</label>
-                            <input type="tel" class="form-control" placeholder="N° de téléphone" id="phone" required data-validation-required-message="Please enter your phone number.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" id="sendMessageButton">Envoyer</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <?= $content ?>
 
     <hr>
 
