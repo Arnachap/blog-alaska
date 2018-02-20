@@ -3,7 +3,7 @@ require('controller/frontend.php');
 
 try {
     if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'listPosts') {
+        if ($_GET['action'] == 'summary') {
             listPosts();
         }
         elseif ($_GET['action'] == 'post') {
@@ -11,12 +11,15 @@ try {
                 post();
             }
             else {
-                throw new Exception('Aucun identifiant de billet envoyé');
+                throw new Exception('Aucun chapitre ne correspond à la demande.');
             }
+        }
+        elseif ($_GET['action'] == 'contact') {
+            
         }
     }
     else {
-        listPosts();
+        lastPosts();
     }
 }
 catch(Exception $e) {

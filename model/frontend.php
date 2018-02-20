@@ -1,4 +1,12 @@
 <?php
+function getLastPosts()
+{
+    $db = dbConnect();
+    $req = $db->query('SELECT id, title, intro, article, DATE_FORMAT(post_date, \'%d %M %Y\') AS article_date FROM articles ORDER BY id DESC LIMIT 5');
+
+    return $req;
+}
+
 function getPosts()
 {
     $db = dbConnect();
