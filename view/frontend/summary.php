@@ -1,4 +1,4 @@
-<?php $title = 'Billet Simple pour l\'Alaska - Sommaire'; ?>
+<?php $title = 'Sommaire - Billet Simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
 
@@ -29,12 +29,12 @@
                         <?= $data['id'] . ' : ' . htmlspecialchars($data['title']) ?>
                     </h2>
                     <h3 class="post-subtitle">
-                        <?php htmlspecialchars($data['intro']) ?>
+                        <?= htmlspecialchars($data['intro']) ?>
                     </h3>
                 </a>
                 <p class="post-meta">Posté par
                     <span class="name">Jean Forteroche</span> le
-                    <?php $data['article_date'] ?>
+                    <?= $data['article_date'] ?>
                 </p>
             </div>
 

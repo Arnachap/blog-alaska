@@ -15,7 +15,7 @@ try {
             }
         }
         elseif ($_GET['action'] == 'contact') {
-            
+            require('view/frontend/contact.php');
         }
     }
     else {
