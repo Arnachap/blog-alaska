@@ -1,8 +1,8 @@
 <?php
 
-require_once('model/Model.php');
+require_once('model/Manager.php');
 
-class PostModel extends Model {
+class PostManager extends Manager {
     public function getLastPosts()
     {
         $db = $this->dbConnect();

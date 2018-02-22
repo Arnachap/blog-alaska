@@ -1,28 +1,27 @@
 <?php
 
-require_once('model/PostModel.php');
+require_once('model/PostManager.php');
 
 function lastPosts()
 {
-    $postModel = new PostModel();
-    $posts = $postModel->getLastPosts();
+    $postManager = new PostManager();
+    $posts = $postManager->getLastPosts();
 
     require('view/frontend/home.php');
 }
 
 function listPosts()
 {
-    $postModel = new PostModel();
-    $posts = $postModel->getPosts();
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts();
 
     require('view/frontend/summary.php');
 }
 
 function post()
 {
-    $postModel = new PostModel();
-
-    $post = $postModel->getPost($_GET['id']);
+    $postManager = new PostManager();
+    $post = $postManager->getPost($_GET['id']);
 
     require('view/frontend/post.php');
 }
