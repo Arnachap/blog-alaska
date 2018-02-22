@@ -1,24 +1,28 @@
 <?php
 
-require('model/frontend.php');
+require_once('model/PostModel.php');
 
 function lastPosts()
 {
-    $posts = getLastPosts();
+    $postModel = new PostModel();
+    $posts = $postModel->getLastPosts();
 
     require('view/frontend/home.php');
 }
 
 function listPosts()
 {
-    $posts = getPosts();
+    $postModel = new PostModel();
+    $posts = $postModel->getPosts();
 
     require('view/frontend/summary.php');
 }
 
 function post()
 {
-    $post = getPost($_GET['id']);
+    $postModel = new PostModel();
+
+    $post = $postModel->getPost($_GET['id']);
 
     require('view/frontend/post.php');
 }
