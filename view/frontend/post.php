@@ -36,6 +36,55 @@
     </div>
 </article>
 
+<hr>
+
+<!-- Comment Section -->
+<div class="container">
+    <h2>Commentaires :</h2>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <?php
+            while ($comment = $comments->fetch())
+            {
+            ?>
+                <p><em><?= htmlspecialchars($comment['author']) ?></em> le <?= $comment['comment_date_format'] ?> :</p>
+                <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Partagez votre avis avec les autres lecteurs !</p>
+            <form name="sentMessage" id="contactForm" action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label for="author">Nom</label>
+                        <input type="text" class="form-control" placeholder="Nom" id="author" name="author" required data-validation-required-message="Veuillez entrer votre nom.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label for="comment">Message</label>
+                        <textarea rows="5" class="form-control" placeholder="Message" id="comment" name="comment" required data-validation-required-message="Veuillez entrer un message."></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

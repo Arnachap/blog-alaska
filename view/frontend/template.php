@@ -102,7 +102,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/main.js"></script>
+    <script src="public/js/main.js"></script>
 
 </body>
 
