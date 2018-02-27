@@ -1,7 +1,5 @@
 <?php $title = 'Contact - Billet Simple pour l\'Alaska'; ?>
 
-<?php ob_start(); ?>
-
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('public/img/contact-bg.jpg')">
     <div class="overlay"></div>
@@ -57,8 +55,5 @@
         </div>
     </div>
 </div>
-
-
-<?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

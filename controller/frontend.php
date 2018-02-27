@@ -43,8 +43,3 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
-
-function contact()
-{
-    require('view/frontend/contact.php');
-}

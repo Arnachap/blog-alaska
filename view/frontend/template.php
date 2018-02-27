@@ -44,7 +44,7 @@
               <a class="nav-link" href="index.php?action=summary">Sommaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?action=contact">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
         </div>
