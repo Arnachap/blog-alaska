@@ -86,7 +86,9 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">&copy; Jean Forteroche 2018</p>
+                    <p class="copyright text-muted">&copy; Jean Forteroche 2018<br>
+                        <a href="index.php?action=admin" class="text-muted" >Administration</a>
+                    </p>
                 </div>
             </div>
         </div>

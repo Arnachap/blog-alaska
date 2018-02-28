@@ -1,5 +1,6 @@
 <?php
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
     if (isset($_GET['action'])) {
@@ -26,6 +27,9 @@ try {
             else {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
+        }
+        elseif ($_GET['action'] == 'admin') {
+            login();
         }
     }
     else {
