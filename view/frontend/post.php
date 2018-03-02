@@ -1,4 +1,4 @@
-<?php $title =  htmlspecialchars($post['title']) . ' - Billet Simple pour l\'Alaska'; ?>
+<?php $title =  htmlspecialchars($article->getTitle()) . ' Billet Simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
 
@@ -10,12 +10,12 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
                     <h1>Chapitre
-                        <?= $post['id'] . ':<br>' . htmlspecialchars($post['title']) ?>
+                        <?= $article->getId() . ':<br>' . htmlspecialchars($article->getTitle()) ?>
                     </h1>
-                    <h2 class="subheading"><?= $post['intro'] ?></h2>
+                    <h2 class="subheading"><?= $article->getIntro() ?></h2>
                     <span class="meta">Posté par
                         <span class="name">Jean Forteroche</span> le
-                        <?= $post['article_date'] ?>
+                        <?= $article->getPostDate() ?>
                     </span>
                 </div>
             </div>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <p>
-                    <?= nl2br(htmlspecialchars($post['article'])) ?>
+                    <?= nl2br(htmlspecialchars($article->getArticle())) ?>
                 </p>
             </div>
         </div>
@@ -44,22 +44,21 @@
 
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        <?php
-            while ($comment = $comments->fetch())
-            {
-            ?>
-                <p><em><?= htmlspecialchars($comment['author']) ?></em> le <?= $comment['comment_date_format'] ?> :</p>
-                <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-            <?php
-            }
-            ?>
+
+        <?php foreach ($comments as $comment) { ?>
+
+            <p><em><?= htmlspecialchars($comment->getAuthor()) ?></em> le <?= $comment->getCommentDate() ?> :</p>
+            <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
+
+        <?php } ?>
+
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>Partagez votre avis avec les autres lecteurs !</p>
-            <form name="sentMessage" id="contactForm" action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <form name="sentMessage" id="contactForm" action="index.php?action=addComment&amp;id=<?= $article->getId() ?>" method="post">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label for="author">Nom</label>

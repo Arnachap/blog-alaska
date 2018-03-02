@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/AdminManager.php');
+require_once('model/Manager/AdminManager.php');
 
 function login()
 {
@@ -9,12 +9,13 @@ function login()
         $adminManager = new AdminManager();
         $logs = $adminManager->login($_POST['user']);
 
-        if (password_verify($_POST['password'], $logs['password']))
+        if ($_POST['user'] == $logs['user'] && password_verify($_POST['password'], $logs['password']))
         {
             require('view/backend/manage.php');
         }
         else 
         {
+            echo '<h3 class="text-danger">Le nom d\'utilisateur et/ou le mot de passe sont incorrect.</h3>';
             require('view/backend/login.php');
         }
     }

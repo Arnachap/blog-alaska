@@ -23,27 +23,24 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-            <?php while ($data = $posts->fetch()) { ?>
+            <?php foreach ($posts as $post) { ?>
 
             <div class="post-preview">
-                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+                <a href="index.php?action=post&amp;id=<?= $post->getId() ?>">
                     <h2 class="post-title">Chapitre
-                        <?= $data['id'] . ' : ' . htmlspecialchars($data['title']) ?>
+                        <?= $post->getId() . ' : ' . htmlspecialchars($post->getTitle()) ?>
                     </h2>
                     <h3 class="post-subtitle">
-                        <?= htmlspecialchars($data['intro']) ?>
+                        <?= htmlspecialchars($post->getIntro()) ?>
                     </h3>
                 </a>
                 <p class="post-meta">Posté par
                     <span class="name">Jean Forteroche</span> le
-                    <?= $data['article_date'] ?>
+                    <?= $post->getPostDate() ?>
                 </p>
             </div>
 
-            <?php 
-                } 
-                $posts->closeCursor();
-            ?>
+            <?php } ?>
 
             <hr>
 

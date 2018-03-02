@@ -1,40 +1,47 @@
 <?php
 
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+require_once('model/Manager/PostManager.php');
+require_once('model/Manager/CommentManager.php');
+
 
 function lastPosts()
 {
-    $postManager = new PostManager();
-    $posts = $postManager->getLastPosts();
+    $lastPosts = PostManager::getLastPosts();
+    
+    foreach ($lastPosts as $post) {
+        $posts[] = new Post($post);
+    }
 
     require('view/frontend/home.php');
 }
 
 function listPosts()
 {
-    $postManager = new PostManager();
-    $posts = $postManager->getPosts();
+    $allPosts = PostManager::getPosts();
+
+    foreach ($allPosts as $post) {
+        $posts[] = new Post($post);
+    }
 
     require('view/frontend/summary.php');
 }
 
 function post()
 {
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
+    $article = PostManager::getPost($_GET['id']);
+    $postComments = CommentManager::getComments($_GET['id']);
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    foreach ($postComments as $comment) {
+        $comments[] = new Comment($comment);
+    }
 
     require('view/frontend/post.php');
 }
 
 function addComment($postId, $author, $comment)
 {
-    $commentManager = new CommentManager();
-
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $comments = CommentManager::getComments($_GET['id']);
+    $affectedLines = CommentManager::postComment($postId, $author, $comment);
 
     if ($affectedLines === false)
     {
