@@ -1,7 +1,7 @@
 <?php
 
-require_once('model/Manager/Manager.php');
-require_once('model/Domain/Post.php');
+require_once('Model/Manager/Manager.php');
+require_once('Model/Domain/Post.php');
 
 class PostManager extends Manager
 {
