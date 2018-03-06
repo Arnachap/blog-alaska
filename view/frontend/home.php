@@ -26,7 +26,7 @@
             <?php foreach ($posts as $post) { ?>
 
             <div class="post-preview">
-                <a href="index.php?action=post&amp;id=<?= $post->getId() ?>">
+                <a href="post/<?= $post->getId() ?>">
                     <h2 class="post-title">Chapitre
                         <?= $post->getId() . ' : ' . htmlspecialchars($post->getTitle()) ?>
                     </h2>
@@ -46,7 +46,7 @@
 
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="index.php?action=summary">Tous les chapitres &rarr;</a>
+                <a class="btn btn-primary float-right" href="summary">Tous les chapitres &rarr;</a>
             </div>
         </div>
     </div>

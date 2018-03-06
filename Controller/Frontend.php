@@ -53,4 +53,8 @@ class Frontend
             header('Location: index.php?action=post&id=' . $postId);
         }
     }
+
+    public function contact() {
+        require('view/frontend/contact.php');
+    }
 }

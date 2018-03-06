@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('public/img/post-bg.jpg')">
+<header class="masthead" style="background-image: url('/blog-alaska/public/img/post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

@@ -21,8 +21,8 @@
         rel='stylesheet' type='text/css'>
 
     <!-- Custom styles -->
-    <link href="public/css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon">
+    <link href="/blog-alaska/public/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/blog-alaska/public/img/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -38,13 +38,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Accueil</a>
+              <a class="nav-link" href="/blog-alaska/index">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?action=summary">Sommaire</a>
+              <a class="nav-link" href="/blog-alaska/summary">Sommaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="/blog-alaska/contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -104,7 +104,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="public/js/main.js"></script>
+    <script src="/blog-alaska/public/js/main.js"></script>
 
 </body>
 
