@@ -21,26 +21,26 @@
     <div class="row">
         <div class="col-md-10 mx-auto">
 
-            <?php foreach ($posts as $post) { ?>
+            <?php foreach ($chapters as $chapter) : ?>
 
             <div class="post-preview">
-                <a href="post/<?= $post->getId() ?>">
+                <a href="post/<?= $chapter->getId() ?>">
                     <h2 class="post-title">Chapitre
-                        <?= $post->getId() . ' : ' . htmlspecialchars($post->getTitle()) ?>
+                        <?= $chapter->getId() . ' : ' . htmlspecialchars($chapter->getTitle()) ?>
                     </h2>
                     <h3 class="post-subtitle">
-                        <?= htmlspecialchars($post->getIntro()) ?>
+                        <?= htmlspecialchars($chapter->getIntro()) ?>
                     </h3>
                 </a>
                 <p class="post-meta">Posté par
                     <span class="name">Jean Forteroche</span> le
-                    <?= $post->getPostDate() ?>
+                    <?= $chapter->getChapterDate() ?>
                 </p>
             </div>
 
             <hr>
 
-            <?php } ?>
+            <?php endforeach ?>
 
         </div>
     </div>
@@ -49,4 +49,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('frontend.php'); ?>

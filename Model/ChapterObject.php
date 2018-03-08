@@ -1,20 +1,20 @@
 <?php
 
-class Post
+class ChapterObject
 {
     private $_id;
     private $_title;
     private $_intro;
     private $_article;
-    private $_postDate;
+    private $_chapterDate;
 
-    public function __construct(array $post)
+    public function __construct(array $chapter)
     {
-        $this->setId($post['id']);
-        $this->setTitle($post['title']);
-        $this->setIntro($post['intro']);
-        $this->setArticle($post['article']);
-        $this->setPostDate($post['article_date']);
+        $this->setId($chapter['id']);
+        $this->setTitle($chapter['title']);
+        $this->setIntro($chapter['intro']);
+        $this->setArticle($chapter['article']);
+        $this->setChapterDate($chapter['article_date']);
     }
 
     public function getId()
@@ -57,13 +57,13 @@ class Post
         $this->_article = $article;
     }
 
-    public function getPostDate()
+    public function getChapterDate()
     {
-        return $this->_postDate;
+        return $this->_chapterDate;
     }
 
-    public function setPostDate($postDate)
+    public function setChapterDate($chapterDate)
     {
-        $this->_postDate = $postDate;
+        $this->_chapterDate = $chapterDate;
     }
 }

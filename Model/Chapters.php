@@ -1,11 +1,8 @@
 <?php
 
-require_once('Model/Manager/Manager.php');
-require_once('Model/Domain/Post.php');
-
-class PostManager extends Manager
+class Chapters extends Database
 {
-    public static function getLastPosts()
+    public static function getLastChapters()
     {
         $db = self::dbConnect();
         $req = $db->query('SELECT id, title, intro, article, DATE_FORMAT(post_date, \'%d %M %Y\') AS article_date FROM articles ORDER BY id DESC LIMIT 5');
@@ -13,22 +10,21 @@ class PostManager extends Manager
         return $req;
     }
 
-    public static function getPosts()
+    public static function getAllChapters()
     {
         $db = self::dbConnect();
         $req = $db->query('SELECT id, title, intro, article, DATE_FORMAT(post_date, \'%d %M %Y\') AS article_date FROM articles ORDER BY id ASC');
     
         return $req;
     }
-    
-    public static function getPost($postId)
+
+    public static function getSingleChapter($chapterId)
     {
         $db = self::dbConnect();
         $req = $db->prepare('SELECT id, title, intro, article, DATE_FORMAT(post_date, \'%d %M %Y\') AS article_date FROM articles WHERE id = ?');
-        $req->execute(array($postId));
-        $post = $req->fetch();
-        $post = new Post($post);
+        $req->execute(array($chapterId));
+        $chapter = $req->fetch();
 
-        return $post;
+        return $chapter;
     }
 }

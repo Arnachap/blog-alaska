@@ -1,6 +1,6 @@
 <?php
 
-class Comment
+class CommentObject
 {
     private $_id;
     private $_postId;
