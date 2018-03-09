@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>Partagez votre avis avec les autres lecteurs !</p>
-            <form name="sentMessage" id="contactForm" action="addComment&amp;id=<?= $chapter->getId() ?>" method="post">
+            <form name="sentMessage" id="contactForm" action="/blog-alaska/index.php?url=addComment&amp;id=<?= $chapter->getId() ?>" method="post">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label for="author">Nom</label>

@@ -4,12 +4,7 @@ class Home
 {
     public static function lastChapters()
     {
-        $lastChapters = Chapters::getLastChapters();
-
-        foreach ($lastChapters as $chapter)
-        {
-            $chapters[] = new ChapterObject($chapter);
-        }
+        $chapters = Chapters::getLastChapters();
 
         require('view/index.php');
     }

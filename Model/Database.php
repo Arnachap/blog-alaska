@@ -2,10 +2,10 @@
 
 abstract class Database
 {
-    public static $host = "localhost";
-    public static $dbName = "blog-alaska";
-    public static $username = "root";
-    public static $password = "root";
+    protected static $host = "localhost";
+    protected static $dbName = "blog-alaska";
+    protected static $username = "root";
+    protected static $password = "root";
 
     protected function dbConnect()
     {

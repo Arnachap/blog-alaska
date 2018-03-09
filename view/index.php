@@ -25,7 +25,7 @@
             <?php foreach ($chapters as $chapter) : ?>
 
             <div class="post-preview">
-                <a href="post/<?= $chapter->getId() ?>">
+                <a href="chapter/<?= $chapter->getId() ?>">
                     <h2 class="post-title">Chapitre
                         <?= $chapter->getId() . ' : ' . htmlspecialchars($chapter->getTitle()) ?>
                     </h2>

@@ -5,29 +5,28 @@ class Chapter
     public static function singleChapter()
     {
         $chapter = Chapters::getSingleChapter($_GET['id']);
-        $chapter = new ChapterObject($chapter);
-
-        $allComments = Comments::getComments($_GET['id']);
-
-        foreach ($allComments as $comment)
-        {
-            $comments[] = new CommentObject($comment);
-        }
+        $comments = Comments::getComments($_GET['id']);
 
         require('view/chapter.php');
     }
 
     public static function addComment()
     {
-        $postComment = Comments::postComment($_GET['id'], $_POST['author'], $_POST['comment']);
+        $chapterId = $_GET['id'];
 
-        if ($postComment === false)
+        if (isset($_POST['author'], $_POST['comment']))
         {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
-        }
-        else
-        {
-            header('Location: index.php?url=chapter&id=' . $_GET['id']);
+            $commentData = array($chapterId, $_POST['author'], $_POST['comment']);
+            $postComment = Comments::postComment($commentData);
+
+            if ($postComment === false)
+            {
+                throw new Exception('Impossible d\'ajouter le commentaire !');
+            }
+            else
+            {
+                header('Location: /blog-alaska/chapter/' . $chapterId);
+            }
         }
     }
 }
