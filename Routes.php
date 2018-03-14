@@ -22,5 +22,20 @@ Route::set('addComment', function()
 
 Route::set('contact', function()
 {
-    require_once('view/contact.php');
+    require_once('view/frontend/contact.php');
+});
+
+Route::set('login', function()
+{
+    Admin::login();
+});
+
+Route::set('admin', function()
+{
+    Admin::manage();
+});
+
+Route::set('logout', function()
+{
+    Admin::logout();
 });

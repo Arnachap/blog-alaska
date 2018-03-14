@@ -6,6 +6,6 @@ class Summary
     {
         $chapters = Chapters::getAllChapters();
 
-        require('view/summary.php');
+        require('view/frontend/summary.php');
     }
 }

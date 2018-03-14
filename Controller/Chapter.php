@@ -7,7 +7,7 @@ class Chapter
         $chapter = Chapters::getSingleChapter($_GET['id']);
         $comments = Comments::getComments($_GET['id']);
 
-        require('view/chapter.php');
+        require('view/frontend/chapter.php');
     }
 
     public static function addComment()

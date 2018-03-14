@@ -6,6 +6,6 @@ class Home
     {
         $chapters = Chapters::getLastChapters();
 
-        require('view/index.php');
+        require('view/frontend/index.php');
     }
 }
