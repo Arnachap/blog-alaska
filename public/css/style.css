@@ -434,3 +434,32 @@ footer .copyright {
 #login {
     background: #dee2e6;
 }
+
+#chaptersTable {
+    border: 1px solid black;
+}
+
+#chaptersTable thead {
+    background-color: #343a40;
+    color: #dee2e6;
+}
+
+#chaptersTable tbody tr:nth-child(even) {
+    background-color: #dee2e6;
+}
+
+#chaptersTable tr th,
+#chaptersTable tr td {
+    padding: 16px;
+}
+
+#chaptersTable tbody a {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#add {
+    font-size: 26px;
+    border-radius: 8px;
+}

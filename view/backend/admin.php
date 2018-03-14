@@ -1,18 +1,20 @@
 <?php ob_start(); ?>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-12 mx-auto">
 
-            <h2 class="text-center">Liste des chapitres :</h2>
+            <h2 class="text-center py-3">Liste des chapitres :</h2>
 
-            <table>
-                <thead>
+            <table id="chaptersTable" class="mx-auto">
+                <thead class="text-center text-uppercase">
                     <tr>
                         <th>N°</th>
                         <th>Titre</th>
                         <th>Intro</th>
                         <th>Date</th>
+                        <th>Editer</th>
+                        <th>Supprimer</th>
                     </tr>
                 </thead>
 
@@ -20,17 +22,33 @@
 
                     <?php foreach ($chapters as $chapter) : ?>
 
-                    <tr>
+                    <tr class="text-center">
                         <td><?= $chapter->getId() ?></td>
-                        <td><?= $chapter->getTitle() ?></td>
-                        <td><?= $chapter->getIntro() ?></td>
+                        <td class="text-left"><?= $chapter->getTitle() ?></td>
+                        <td class="text-left"><?= $chapter->getIntro() ?></td>
                         <td><?= $chapter->getChapterDate() ?></td>
+                        <td>
+                            <a href="" class="btn btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
                     </tr>
 
                      <?php endforeach ?>
 
                 </tbody>
             </table>
+
+            <div class="col-12 text-center mt-5">
+                <a href="" id="add" class="btn btn-success">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>
