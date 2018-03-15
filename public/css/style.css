@@ -446,6 +446,15 @@ footer .copyright {
 
 /* Backend */
 
+#backend {
+    background-color: #e9ecef;
+}
+
+#backend h1,
+#backend h2 {
+    color: #343a40;
+}
+
 #login {
     background: #dee2e6;
 }
@@ -463,6 +472,10 @@ footer .copyright {
     background-color: #dee2e6;
 }
 
+#chaptersTable tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
 #chaptersTable tr th,
 #chaptersTable tr td {
     padding: 16px;
@@ -474,7 +487,13 @@ footer .copyright {
     border-radius: 5px;
 }
 
-#add {
-    font-size: 26px;
+#new {
+    font-size: 20px;
     border-radius: 8px;
+}
+
+#newChapterForm label {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

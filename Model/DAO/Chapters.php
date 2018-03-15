@@ -37,4 +37,12 @@ class Chapters extends Database
 
         return $chapter;
     }
+
+    public static function postChapter(array $chapterData)
+    {
+        $db = self::dbConnect();
+        $chapter = $db->prepare('INSERT INTO articles(id, title, intro, article, post_date) VALUES(?, ?, ?, ?, NOW())');
+
+        return $chapter->execute($chapterData);
+    }
 }

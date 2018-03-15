@@ -24,16 +24,16 @@
 
                     <tr class="text-center">
                         <td><?= $chapter->getId() ?></td>
-                        <td class="text-left"><?= $chapter->getTitle() ?></td>
+                        <td class="text-left font-weight-bold"><?= $chapter->getTitle() ?></td>
                         <td class="text-left"><?= $chapter->getIntro() ?></td>
                         <td><?= $chapter->getChapterDate() ?></td>
                         <td>
-                            <a href="" class="btn btn-primary">
+                            <a href="edit/<?= $chapter->getId() ?>" class="btn btn-primary">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td>
                         <td>
-                            <a href="" class="btn btn-danger">
+                            <a href="delete&amp;id=<?= $chapter->getId() ?>" class="btn btn-danger">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -45,7 +45,7 @@
             </table>
 
             <div class="col-12 text-center mt-5">
-                <a href="" id="add" class="btn btn-success">
+                <a href="new" id="new" class="btn btn-success">
                     <i class="fas fa-plus"></i>
                 </a>
             </div>

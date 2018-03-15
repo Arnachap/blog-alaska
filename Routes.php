@@ -30,12 +30,32 @@ Route::set('login', function()
     Admin::login();
 });
 
+Route::set('logout', function()
+{
+    Admin::logout();
+});
+
 Route::set('admin', function()
 {
     Admin::manage();
 });
 
-Route::set('logout', function()
+Route::set('new', function()
 {
-    Admin::logout();
+    Backend::new();
+});
+
+Route::set('addChapter', function()
+{
+    Backend::addChapter();
+});
+
+Route::set('edit', function()
+{
+    Backend::editChapter();
+});
+
+Route::set('delete', function()
+{
+    Backend::deleteChapter();
 });
