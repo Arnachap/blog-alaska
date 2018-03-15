@@ -17,7 +17,6 @@ class Backend extends Admin
         {
             $chapterData = array($_POST['id'], $_POST['title'], $_POST['intro'], $_POST['content']);
             $postChapter = Chapters::postChapter($chapterData);
-            var_dump($postChapter);
 
             if ($postChapter === false)
             {
@@ -27,6 +26,22 @@ class Backend extends Admin
             {
                 header('Location: /blog-alaska/admin');
             }
+        }
+    }
+
+    public function deleteChapter()
+    {
+        if (!self::isLogged()) exit;
+
+        $chapterDelete = Chapters::deleteChapter($_GET['id']);
+        
+        if ($chapterDelete === false)
+        {
+            throw new Exception('Impossible de supprimer le chapitre !');
+        }
+        else
+        {
+            header('Location: /blog-alaska/admin');
         }
     }
 }

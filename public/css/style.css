@@ -481,7 +481,7 @@ footer .copyright {
     padding: 16px;
 }
 
-#chaptersTable tbody a {
+#chaptersTable tbody button {
     padding: 12px;
     font-size: 16px;
     border-radius: 5px;

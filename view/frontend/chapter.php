@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <p>
-                    <?= nl2br(htmlspecialchars($chapter->getArticle())) ?>
+                    <?= nl2br($chapter->getArticle()) ?>
                 </p>
             </div>
         </div>

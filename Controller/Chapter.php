@@ -14,7 +14,7 @@ class Chapter
     {
         $chapterId = $_GET['id'];
 
-        if (isset($_POST['author'], $_POST['comment']))
+        if (isset($_POST['author']) && isset($_POST['comment']))
         {
             $commentData = array($chapterId, $_POST['author'], $_POST['comment']);
             $postComment = Comments::postComment($commentData);
