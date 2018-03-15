@@ -40,24 +40,25 @@
 
 <!-- Comment Section -->
 <div class="container">
-    <h2>Commentaires :</h2>
-
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="my-3 text-center">Commentaires :</h2>
+            <div class="my-3">
 
-        <?php foreach ($comments as $comment) : ?>
+                <?php foreach ($comments as $comment) : ?>
 
-            <p><em><?= htmlspecialchars($comment->getAuthor()) ?></em> le <?= $comment->getCommentDate() ?> :</p>
-            <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
+                    <p class="comment-heading"><em><?= htmlspecialchars($comment->getAuthor()) ?></em>, le <?= $comment->getCommentDate() ?> :</p>
+                    <p class="comment w-75"><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
 
-        <?php endforeach ?>
+                <?php endforeach ?>
 
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Partagez votre avis avec les autres lecteurs !</p>
+            <h3 class="mt-5">Ajouter un commentaire :</h3>
             <form name="sentMessage" id="contactForm" action="/blog-alaska/index.php?url=addComment&amp;id=<?= $chapter->getId() ?>" method="post">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">

@@ -324,6 +324,21 @@ header.masthead .post-heading .meta a {
     }
 }
 
+.comment-heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 20px 0 8px 0;
+}
+
+.comment {
+    margin: 0 10px;
+    padding: 10px 24px;
+    background-color: #00afd4;
+    border-radius: 6px;
+    color: #e9ecef;
+    text-align: justify;
+}
+
 .floating-label-form-group {
     font-size: 14px;
     position: relative;
