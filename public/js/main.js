@@ -1,5 +1,6 @@
 ! function (i) {
     'use strict';
+
     i('body').on('input propertychange', '.floating-label-form-group', function (o) {
         i(this).toggleClass('floating-label-form-group-with-value', !!i(o.target).val())
     }).on('focus', '.floating-label-form-group', function () {
@@ -7,6 +8,7 @@
     }).on('blur', '.floating-label-form-group', function () {
         i(this).removeClass('floating-label-form-group-with-focus')
     });
+
     if (i(window).width() > 992) {
         var o = i('#mainNav').height();
         i(window).on('scroll', {
@@ -16,6 +18,19 @@
             s < this.previousTop ? s > 0 && i('#mainNav').hasClass('is-fixed') ? i('#mainNav').addClass('is-visible') : i('#mainNav').removeClass('is-visible is-fixed') : s > this.previousTop && (i('#mainNav').removeClass('is-visible'), s > o && !i('#mainNav').hasClass('is-fixed') && i('#mainNav').addClass('is-fixed')), this.previousTop = s
         })
     }
+
+    i('.report').each(function() {
+
+        var commentId = i(this).attr('data-commentid');
+        var reportLink = '<a href=\'report/' + commentId + '\'>Signaler ce commmentaire</a>';
+
+        i(this).popover({
+            trigger: 'focus',
+            html: true,
+            content: reportLink
+        });
+    });
+
     i('.delBtn').on('click', function() {
         var delLink = 'delete&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);

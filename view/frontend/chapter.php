@@ -47,8 +47,18 @@
 
                 <?php foreach ($comments as $comment) : ?>
 
-                    <p class="comment-heading"><em><?= htmlspecialchars($comment->getAuthor()) ?></em>, le <?= $comment->getCommentDate() ?> :</p>
-                    <p class="comment w-75"><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
+                    <div class="comment-heading">
+                        <p><em><?= htmlspecialchars($comment->getAuthor()) ?></em>, le <?= $comment->getCommentDate() ?> :</p>
+                    </div>
+
+                    <div class="comment row w-75">
+                        <p class="col-11"><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
+                        <div class="col-1">
+                            <a tabindex="0" class="text-light report" role="button" data-commentid="<?= $comment->getId() ?>" data-toggle="popover">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </a>    
+                        </div>
+                    </div>
 
                 <?php endforeach ?>
 

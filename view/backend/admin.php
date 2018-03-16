@@ -62,7 +62,7 @@
 
                         <div class="modal-footer modal-delete">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <a href="" data-idChapter="">
+                            <a href="">
                                 <button type="button" class="btn btn-danger">Supprimer le chapitre</button>
                             </a>
                         </div>

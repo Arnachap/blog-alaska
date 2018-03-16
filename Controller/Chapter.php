@@ -13,10 +13,12 @@ class Chapter
     public static function addComment()
     {
         $chapterId = $_GET['id'];
+        $author = $_POST['author'];
+        $comment = $_POST['comment'];
 
-        if (isset($_POST['author']) && isset($_POST['comment']))
+        if (isset($author) && isset($comment))
         {
-            $commentData = array($chapterId, $_POST['author'], $_POST['comment']);
+            $commentData = array($chapterId, $author, $comment);
             $postComment = Comments::postComment($commentData);
 
             if ($postComment === false)
