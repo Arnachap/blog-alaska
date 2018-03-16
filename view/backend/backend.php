@@ -62,8 +62,8 @@
 
     <!-- TinyMCE script -->
     <?php if (isset($_GET['action']) && $_GET['action'] == 'new') : ?>
-        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-        <script>tinymce.init({ selector:'textarea', height : "480" });</script>
+        <script src="/blog-alaska/public/js/tinymce/tinymce.min.js"></script>
+        <script>tinymce.init({ selector:'textarea', height : "480", language: 'fr_FR' });</script>
     <?php endif ?>
 
     <!-- Custom scripts for this template -->
