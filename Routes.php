@@ -37,25 +37,5 @@ Route::set('logout', function()
 
 Route::set('admin', function()
 {
-    Admin::manage();
-});
-
-Route::set('new', function()
-{
-    Backend::new();
-});
-
-Route::set('addChapter', function()
-{
-    Backend::addChapter();
-});
-
-Route::set('edit', function()
-{
-    Backend::editChapter();
-});
-
-Route::set('delete', function()
-{
-    Backend::deleteChapter();
+    Backend::manage();
 });

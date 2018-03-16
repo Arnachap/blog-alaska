@@ -2,6 +2,37 @@
 
 class Backend extends Admin
 {
+    public function manage()
+    {
+        if (!self::isLogged()) exit;
+
+        if(!empty($_GET['action']))
+        {
+            $action = $_GET['action'];
+
+            if (method_exists(__CLASS__, $action))
+            {
+                self::$action();
+            }
+        }
+        else
+        {
+            $chapters = Chapters::getAllChapters();
+
+            require('view/backend/admin.php');
+        }
+    }
+
+    public function viewChapter()
+    {
+        if (!self::isLogged()) exit;
+
+        $chapter = Chapters::getSingleChapter($_GET['id']);
+        $comments = Comments::getComments($_GET['id']);
+
+        require('view/backend/chapter.php');
+    }
+
     public function new()
     {
         if (!self::isLogged()) exit;
@@ -12,7 +43,7 @@ class Backend extends Admin
     public function addChapter()
     {
         if (!self::isLogged()) exit;
-
+        
         if (isset($_POST['id'], $_POST['title'],  $_POST['intro'], $_POST['content']))
         {
             $chapterData = array($_POST['id'], $_POST['title'], $_POST['intro'], $_POST['content']);
@@ -43,5 +74,12 @@ class Backend extends Admin
         {
             header('Location: /blog-alaska/admin');
         }
+    }
+
+    public function editChapter()
+    {
+        if (!self::isLogged()) exit;
+
+
     }
 }

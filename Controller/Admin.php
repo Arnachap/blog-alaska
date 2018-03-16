@@ -50,13 +50,4 @@ class Admin
         header('Location: /blog-alaska/index');
         exit;
     }
-
-    public function manage()
-    {
-        if (!self::isLogged()) exit;
-
-        $chapters = Chapters::getAllChapters();
-
-        require('view/backend/admin.php');
-    }
 }

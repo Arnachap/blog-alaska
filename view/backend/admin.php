@@ -11,7 +11,6 @@
                     <tr>
                         <th>N°</th>
                         <th>Titre</th>
-                        <th>Intro</th>
                         <th>Date</th>
                         <th>Editer</th>
                         <th>Supprimer</th>
@@ -23,10 +22,20 @@
                     <?php foreach ($chapters as $chapter) : ?>
 
                     <tr class="text-center">
-                        <td><?= $chapter->getId() ?></td>
-                        <td class="text-left font-weight-bold"><?= $chapter->getTitle() ?></td>
-                        <td class="text-left"><?= $chapter->getIntro() ?></td>
-                        <td><?= $chapter->getChapterDate() ?></td>
+                        <td>
+                            <?= $chapter->getId() ?>
+                        </td>
+
+                        <td class="text-left font-weight-bold">
+                            <a href="admin&amp;action=viewChapter&amp;id=<?= $chapter->getId() ?>">
+                                <?= $chapter->getTitle() ?>
+                            </a>
+                        </td>
+
+                        <td>
+                            <?= $chapter->getChapterDate() ?>
+                        </td>
+
                         <td>
                             <a href="edit/<?= $chapter->getId() ?>">
                                 <button class="btn btn-primary">
@@ -34,6 +43,7 @@
                                 </button>
                             </a>
                         </td>
+
                         <td>
                             <button id="<?= $chapter->getId() ?>" type="button" class="btn btn-danger delBtn" data-toggle="modal" data-target="#confirmDelete">
                                 <i class="fas fa-trash"></i>
@@ -71,7 +81,7 @@
             </div>
 
             <div class="col-12 text-center mt-5">
-                <a href="new" id="new" class="btn btn-success">
+                <a href="admin&amp;action=new" id="new" class="btn btn-success">
                     <i class="fas fa-plus"></i>
                 </a>
             </div>

@@ -32,7 +32,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mx-auto">
-                <h1 class="text-center mt-2 p-3">Administration</h1>
+                <h1 class="text-center mt-2 p-3"><a href="admin">Administration</a></h1>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
         crossorigin="anonymous"></script>
 
     <!-- TinyMCE script -->
-    <?php if ($_GET['url'] == 'new') : ?>
+    <?php if (isset($_GET['action']) && $_GET['action'] == 'new') : ?>
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
         <script>tinymce.init({ selector:'textarea', height : "480" });</script>
     <?php endif ?>

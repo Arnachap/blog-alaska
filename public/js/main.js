@@ -20,7 +20,6 @@
     }
 
     i('.report').each(function() {
-
         var commentId = i(this).attr('data-commentid');
         var reportLink = '<a href=\'report/' + commentId + '\'>Signaler ce commmentaire</a>';
 
@@ -32,7 +31,7 @@
     });
 
     i('.delBtn').on('click', function() {
-        var delLink = 'delete&id=' + i(this).attr('id');
+        var delLink = 'admin&action=deleteChapter&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
     });
 }(jQuery);
