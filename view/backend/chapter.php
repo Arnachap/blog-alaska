@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
     <div id="manageButtons" class="d-flex">
-        <a href="edit/<?= $chapter->getId() ?>">
+        <a href="admin&amp;action=editChapter&amp;id=<?= $chapter->getId() ?>">
             <button class="btn btn-primary">
                 <i class="fas fa-edit"></i>
             </button>

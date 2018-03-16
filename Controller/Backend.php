@@ -80,6 +80,25 @@ class Backend extends Admin
     {
         if (!self::isLogged()) exit;
 
+        if (isset($_POST['id'], $_POST['title'],  $_POST['intro'], $_POST['content']))
+        {
+            $chapterData = array($_POST['id'], $_POST['title'], $_POST['intro'], $_POST['content']);
+            $postChapter = Chapters::editChapter($chapterData, $_GET['id']);
 
+            if ($postChapter === false)
+            {
+                throw new Exception('Impossible d\'ajouter le chapitre !');
+            }
+            else
+            {
+                header('Location: /blog-alaska/admin');
+            }
+        }
+        else
+        {
+            $chapter = Chapters::getSingleChapter($_GET['id']);
+
+            require('view/backend/edit.php');
+        }
     }
 }

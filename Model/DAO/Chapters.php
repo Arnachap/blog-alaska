@@ -53,4 +53,12 @@ class Chapters extends Database
         
         return $chapterDelete->execute(array($chapterId));
     }
+
+    public static function editChapter(array $chapterData, $id)
+    {
+        $db = self::dbConnect();
+        $chapterEdit = $db->prepare('UPDATE articles SET id = ?, title = ?, intro = ?, article = ?, post_date = NOW() WHERE id = ' . $id);
+
+        return $chapterEdit->execute($chapterData);
+    }
 }

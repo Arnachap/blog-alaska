@@ -61,7 +61,7 @@
         crossorigin="anonymous"></script>
 
     <!-- TinyMCE script -->
-    <?php if (isset($_GET['action']) && $_GET['action'] == 'new') : ?>
+    <?php if (isset($_GET['action']) && $_GET['action'] == 'new' || 'edit') : ?>
         <script src="/blog-alaska/public/js/tinymce/tinymce.min.js"></script>
         <script>tinymce.init({ selector:'textarea', height : "480", language: 'fr_FR' });</script>
     <?php endif ?>
