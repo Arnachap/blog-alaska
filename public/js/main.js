@@ -30,8 +30,13 @@
         });
     });
 
-    i('.delBtn').on('click', function() {
+    i('.delChapter').on('click', function() {
         var delLink = 'admin&action=deleteChapter&id=' + i(this).attr('id');
+        i('.modal-delete a').attr('href', delLink);
+    });
+
+    i('.delComment').on('click', function() {
+        var delLink = 'admin&action=deleteComment&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
     });
 }(jQuery);

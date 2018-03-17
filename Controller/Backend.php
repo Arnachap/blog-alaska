@@ -101,4 +101,20 @@ class Backend extends Admin
             require('view/backend/edit.php');
         }
     }
+
+    public function deleteComment()
+    {
+        if (!self::isLogged()) exit;
+
+        $commentDelete = Comments::deleteComment($_GET['id']);
+
+        if ($commentDelete === false)
+        {
+            throw new Exception('Impossible de supprimer le Commentaire !');
+        }
+        else
+        {
+            header('Location: /blog-alaska/admin');
+        }
+    }
 }

@@ -7,7 +7,7 @@
             </button>
         </a>
         
-        <button id="<?= $chapter->getId() ?>" type="button" class="btn btn-danger delBtn" data-toggle="modal" data-target="#confirmDelete">
+        <button id="<?= $chapter->getId() ?>" type="button" class="btn btn-danger delChapter" data-toggle="modal" data-target="#confirmDelete">
             <i class="fas fa-trash"></i>
         </button>
     </div>
@@ -81,16 +81,45 @@
                 <?php foreach ($comments as $comment) : ?>
 
                     <div class="comment-heading">
-                        <p><em><?= htmlspecialchars($comment->getAuthor()) ?></em>, le <?= $comment->getCommentDate() ?> :</p>
+                        <p>
+                            <em><?= htmlspecialchars($comment->getAuthor()) ?></em>, le <?= $comment->getCommentDate() ?> :
+                            <button id="<?= $comment->getId() ?>" type="button" class="btn btn-danger float-right delComment" data-toggle="modal" data-target="#commentDelete">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </p>
                     </div>
 
-                    <div class="comment row w-75">
-                        <p class="col-12">
+                    <div class="comment">
+                        <p>
                             <?= nl2br(htmlspecialchars($comment->getComment())) ?>
                         </p>
                     </div>
 
                 <?php endforeach ?>
+
+                <div class="modal fade" id="commentDelete" tabindex="-1" role="dialog" aria-labelledby="commentDelete" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Supprimer le commentaire</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Voulez-vous supprimer ce commentaire de manière définitive ?</p> 
+                            </div>
+
+                            <div class="modal-footer modal-delete">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <a href="">
+                                    <button type="button" class="btn btn-danger">Supprimer le commentaire</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

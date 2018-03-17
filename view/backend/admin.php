@@ -45,7 +45,7 @@
                         </td>
 
                         <td>
-                            <button id="<?= $chapter->getId() ?>" type="button" class="btn btn-danger delBtn" data-toggle="modal" data-target="#confirmDelete">
+                            <button id="<?= $chapter->getId() ?>" type="button" class="btn btn-danger delChapter" data-toggle="modal" data-target="#confirmDelete">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
