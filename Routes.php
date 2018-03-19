@@ -20,6 +20,11 @@ Route::set('addComment', function()
     Chapter::addComment();
 });
 
+Route::set('reportComment', function()
+{
+    Chapter::reportComment();
+});
+
 Route::set('contact', function()
 {
     require_once('view/frontend/contact.php');

@@ -26,7 +26,7 @@
 
                     <div>
                         <label>Contenu :</label>
-                        <textarea name="content"></textarea>
+                        <textarea name="content" class="tinyText"></textarea>
                     </div>
 
                     <div class="form-group py-3 d-flex justify-content-center">

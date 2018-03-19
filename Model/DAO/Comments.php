@@ -32,4 +32,42 @@ class Comments extends Database
 
         return $deleteComment->execute(array($commentId));
     }
+
+    public static function reportComment($commentId)
+    {
+        $db = self::dbConnect();
+        $reportComment = $db->prepare('UPDATE comments SET reported = true WHERE id = ?');
+
+        return $reportComment->execute(array($commentId));
+    }
+
+    public static function getReportedComments()
+    {
+        $db = self::dbConnect();
+        $comments = $db->query('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d %M %Y\') AS comment_date_format FROM comments WHERE reported = true');
+        $reportedComments = [];
+
+        foreach ($comments as $comment)
+        {
+            $reportedComments[] = new CommentObject($comment);
+        }
+
+        return $reportedComments;
+    }
+
+    public function validComment($commentId)
+    {
+        $db = self::dbConnect();
+        $validComment = $db->prepare('UPDATE comments SET reported = false WHERE id = ?');
+
+        return $validComment->execute(array($commentId));
+    }
+
+    public function editComment($newCommentData)
+    {
+        $db = self::dbConnect();
+        $editComment = $db->prepare('UPDATE comments SET comment = ?, reported = false WHERE id = ?');
+
+        return $editComment->execute($newCommentData);
+    }
 }

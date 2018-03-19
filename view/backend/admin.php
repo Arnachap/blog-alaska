@@ -4,6 +4,12 @@
     <div class="row">
         <div class="col-12 mx-auto">
 
+            <?php if (!empty($reportedComments)) : ?>
+                <div class="alert alert-danger" role="alert">
+                    Des commentaires ont étés signalés. <a href="admin&amp;action=viewReportedComments" class="alert-link">Cliquez ici pour gérer les commentaires signalés</a>.
+                </div>
+            <?php endif ?>
+
             <h2 class="text-center py-3">Liste des chapitres :</h2>
 
             <table id="chaptersTable" class="mx-auto">

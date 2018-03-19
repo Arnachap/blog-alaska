@@ -516,7 +516,8 @@ footer .copyright {
     border-radius: 5px;
 }
 
-.delComment {
+.comment-heading .delComment,
+.comment-heading .editComment {
     padding: 4px 8px;
     border-radius: 100%;
     margin-right: 20px;

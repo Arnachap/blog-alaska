@@ -31,4 +31,18 @@ class Chapter
             }
         }
     }
+
+    public static function reportComment()
+    {
+        $reportComment = Comments::reportComment($_GET['id']);
+
+        if ($reportComment === false)
+        {
+            throw new Exception('Impossible de signaler le commentaire !');
+        }
+        else
+        {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
+    }
 }

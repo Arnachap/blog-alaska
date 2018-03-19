@@ -21,7 +21,7 @@
 
     i('.report').each(function() {
         var commentId = i(this).attr('data-commentid');
-        var reportLink = '<a href=\'report/' + commentId + '\'>Signaler ce commmentaire</a>';
+        var reportLink = '<a href=\'../reportComment&amp;id=' + commentId + '\'>Signaler ce commmentaire</a>';
 
         i(this).popover({
             trigger: 'focus',
@@ -38,5 +38,22 @@
     i('.delComment').on('click', function() {
         var delLink = 'admin&action=deleteComment&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
+    });
+
+    i('.validComment').on('click', function() {
+        var valLink = 'admin&action=validateComment&id=' + i(this).attr('id');
+        i('.modal-validate a').attr('href', valLink);
+    });
+
+    i('.editComment').on('click', function() {
+        var formAction = 'admin&action=viewReportedComments';
+        i('#commentEdit form').attr('action', formAction);
+        
+        var commentId = i(this).attr('id');
+        i('#commentId').attr('value', commentId);
+
+        var commentContentId = '#comment' + commentId;
+        var commentContent = i(commentContentId).text();
+        i('#newComment').html(i.trim(commentContent));
     });
 }(jQuery);
