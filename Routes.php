@@ -27,7 +27,7 @@ Route::set('reportComment', function()
 
 Route::set('contact', function()
 {
-    require_once('view/frontend/contact.php');
+    Contact::contactForm();
 });
 
 Route::set('login', function()

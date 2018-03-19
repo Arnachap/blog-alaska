@@ -19,6 +19,7 @@ class Backend extends Admin
         {
             $chapters = Chapters::getAllChapters();
             $reportedComments = Comments::getReportedComments();
+            $messages = Message::getMessages();
 
             require('view/backend/admin.php');
         }
