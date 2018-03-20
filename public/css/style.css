@@ -494,7 +494,6 @@ footer .copyright {
 
 #new {
     font-size: 20px;
-    border-radius: 8px;
 }
 
 #newChapterForm label {
@@ -521,4 +520,14 @@ footer .copyright {
     padding: 4px 8px;
     border-radius: 100%;
     margin-right: 20px;
+}
+
+#inbox {
+    position: absolute;
+    right: 60px;
+    top: 24px;
+}
+
+#inbox a {
+    border-radius: 8px;
 }

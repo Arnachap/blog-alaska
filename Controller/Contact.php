@@ -4,7 +4,7 @@ class Contact
 {
     public static function contactForm()
     {
-        if (isset($_POST['username'], $_POST['email'], $_POST['message']))
+        if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['message']))
         {
             $username = $_POST['username'];
             $email = $_POST['email'];

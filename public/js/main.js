@@ -40,6 +40,11 @@
         i('.modal-delete a').attr('href', delLink);
     });
 
+    i('.delMessage').on('click', function() {
+        var delLink = 'admin&action=deleteMessage&id=' + i(this).attr('id');
+        i('.modal-delete a').attr('href', delLink);
+    });
+
     i('.validComment').on('click', function() {
         var valLink = 'admin&action=validateComment&id=' + i(this).attr('id');
         i('.modal-validate a').attr('href', valLink);

@@ -16,7 +16,7 @@ class Chapter
         $author = $_POST['author'];
         $comment = $_POST['comment'];
 
-        if (isset($author) && isset($comment))
+        if (!empty($author) && !empty($comment))
         {
             $commentData = array($chapterId, $author, $comment);
             $postComment = Comments::postComment($commentData);

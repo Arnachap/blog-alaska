@@ -29,6 +29,12 @@
 <body id="backend">
 
 <header>
+    <div id="inbox">
+        <a href="admin&amp;action=inbox" class="btn btn-info">
+            <i class="fas fa-2x fa-envelope"></i>
+        </a>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-12 mx-auto">
