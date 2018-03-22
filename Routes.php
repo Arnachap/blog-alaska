@@ -44,3 +44,18 @@ Route::set('admin', function()
 {
     Backend::manage();
 });
+
+Route::set('chapterBackend', function()
+{
+    Chapterbackend::manage();
+});
+
+Route::set('reported', function()
+{
+    Reported::manage();
+});
+
+Route::set('messages', function()
+{
+    Messages::manage();
+});

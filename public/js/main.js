@@ -31,27 +31,27 @@
     });
 
     i('.delChapter').on('click', function() {
-        var delLink = 'admin&action=deleteChapter&id=' + i(this).attr('id');
+        var delLink = 'chapterBackend&action=deleteChapter&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
     });
 
     i('.delComment').on('click', function() {
-        var delLink = 'admin&action=deleteComment&id=' + i(this).attr('id');
+        var delLink = 'reported&action=deleteComment&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
     });
 
     i('.delMessage').on('click', function() {
-        var delLink = 'admin&action=deleteMessage&id=' + i(this).attr('id');
+        var delLink = 'messages&action=deleteMessage&id=' + i(this).attr('id');
         i('.modal-delete a').attr('href', delLink);
     });
 
     i('.validComment').on('click', function() {
-        var valLink = 'admin&action=validateComment&id=' + i(this).attr('id');
+        var valLink = 'reported&action=validateComment&id=' + i(this).attr('id');
         i('.modal-validate a').attr('href', valLink);
     });
 
     i('.editComment').on('click', function() {
-        var formAction = 'admin&action=viewReportedComments';
+        var formAction = 'reported&action=viewReportedComments';
         i('#commentEdit form').attr('action', formAction);
         
         var commentId = i(this).attr('id');

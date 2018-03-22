@@ -6,7 +6,7 @@
 
             <?php if (!empty($reportedComments)) : ?>
                 <div class="alert alert-danger" role="alert">
-                    Des commentaires ont étés signalés. <a href="admin&amp;action=viewReportedComments" class="alert-link">Cliquez ici pour gérer les commentaires signalés</a>.
+                    Des commentaires ont étés signalés. <a href="reported&amp;action=viewReportedComments" class="alert-link">Cliquez ici pour gérer les commentaires signalés</a>.
                 </div>
             <?php endif ?>
 
@@ -33,7 +33,7 @@
                         </td>
 
                         <td class="text-left font-weight-bold">
-                            <a href="admin&amp;action=viewChapter&amp;id=<?= $chapter->getId() ?>">
+                            <a href="chapterBackend&amp;action=viewChapter&amp;id=<?= $chapter->getId() ?>">
                                 <?= $chapter->getTitle() ?>
                             </a>
                         </td>
@@ -43,7 +43,7 @@
                         </td>
 
                         <td>
-                            <a href="admin&amp;action=editChapter&amp;id=<?= $chapter->getId() ?>">
+                            <a href="chapterBackend&amp;action=editChapter&amp;id=<?= $chapter->getId() ?>">
                                 <button class="btn btn-primary">
                                     <i class="fas fa-edit"></i>
                                 </button>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="col-12 text-center mt-5">
-                <a href="admin&amp;action=new" id="new" class="btn btn-success">
+                <a href="chapterBackend&amp;action=new" id="new" class="btn btn-success">
                     <i class="fas fa-plus"></i>
                 </a>
             </div>

@@ -68,7 +68,7 @@
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <a href="admin&amp;action=viewMessage&amp;id=<?= $message->getId() ?>">
+                                    <a href="messages&amp;action=viewMessage&amp;id=<?= $message->getId() ?>">
                                         <button type="button" class="btn btn-success">Marquer le message comme lu</button>
                                     </a>
                                 </div>

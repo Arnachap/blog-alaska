@@ -6,7 +6,7 @@
             <div class="col-8 mx-auto">
                 <h2 class="text-center my-5">Nouveau Chapitre :</h2>
 
-                <form action="/blog-alaska/index.php?url=admin&amp;action=editChapter&amp;id=<?= $chapter->getId() ?>" method="post" id="newChapterForm">
+                <form action="/blog-alaska/index.php?url=chapterBackend&amp;action=editChapter&amp;id=<?= $chapter->getId() ?>" method="post" id="newChapterForm">
                     <div class="row">
                         <div class="form-group col-1 pr-0">
                             <label for="id">N°</label>

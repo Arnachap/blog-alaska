@@ -30,7 +30,7 @@
 
 <header>
     <div id="inbox">
-        <a href="admin&amp;action=inbox" class="btn btn-info">
+        <a href="messages&amp;action=inbox" class="btn btn-info">
             <i class="fas fa-2x fa-envelope"></i>
         </a>
     </div>
